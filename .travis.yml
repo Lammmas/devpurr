@@ -1,7 +1,17 @@
+language: php
+
 php:
-  - "5.5"
+  - 5.4
+  - 5.5
 
 # whitelist
 branches:
   only:
     - dev
+
+install: travis_retry composer install --no-interaction --prefer-source --dev
+
+before_script:
+  - composer self-update
+
+script: laravel/vendor/bin/phpunit
