@@ -9,7 +9,8 @@ branches:
   only:
     - dev
 
-install: travis_retry composer install --no-interaction --prefer-source --dev
+
+install: travis_retry composer install --no-interaction --prefer-source --dev --working-dir laravel/ -v
 
 before_script:
   - composer self-update
