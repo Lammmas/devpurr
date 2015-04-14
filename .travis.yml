@@ -1,14 +1,12 @@
 language: php
+
 php:
-  - "5.5"
+  - 5.4
+  - 5.5
 
-# whitelist (l8r)
-#branches:
-#  only:
-#    - dev
+install: travis_retry composer install --no-interaction --prefer-source --dev
 
- before_script:
+before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
 
 script: laravel/vendor/bin/phpunit
